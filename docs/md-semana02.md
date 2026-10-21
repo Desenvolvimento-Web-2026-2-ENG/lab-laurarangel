@@ -15,7 +15,7 @@
    </header>
 
     <main>
-        <article> Envie sua mensagem para a nossa equipe de suporte backend</article>
+        <h1> Envie sua mensagem para a nossa equipe de suporte backend</h1>
         
         <form action="/enviar" method="POST">
              <label for="nome">Nome:</label>
