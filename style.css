@@ -1,0 +1,205 @@
+
+/* ETAPA 1: Variáveis, Herança e Seletores */
+
+:root {
+    --cor-primaria: #ff479d;
+    --cor-fundo: #ffa3ce;
+    --cor-superficie: #fff0f7;
+    --cor-texto: #630066;
+    --cor-borda: #b63e76;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
+    margin: 0;
+
+    /* Layout principal com Grid */
+    display: grid;
+    min-height: 100vh;
+
+    grid-template-columns: 280px 1fr;
+
+    grid-template-areas:
+        "header header"
+        "nav main";
+}
+
+/* Tipografia dos títulos */
+
+h1, h2, h3 {
+    font-family: "Black Ops One", system-ui;
+}
+
+/* Oculta as linhas horizontais */
+
+hr {
+    display: none;
+}
+
+
+/* ETAPA 2: Organização das áreas do Grid */
+
+.cabecalho {
+    grid-area: header;
+
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.menu {
+    grid-area: nav;
+
+    background-color: var(--cor-superficie);
+
+    padding: 1.5rem;
+    border-right: 1px solid var(--cor-borda);
+}
+
+.conteudo {
+    grid-area: main;
+
+    padding: 1.5rem;
+}
+
+
+/* ETAPA 3: Ajustes do cabeçalho */
+
+.cabecalho h1 {
+    margin: 0 0 0.2rem 0;
+}
+
+.cabecalho p {
+    margin: 0;
+}
+
+
+/* ETAPA 4: Menu e links */
+
+.menu a {
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: var(--cor-primaria);
+    text-decoration: underline;
+}
+
+/* Destaque do item Início */
+
+.inicio {
+    background-color: var(--cor-primaria);
+    color: white;
+
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+
+/* ETAPA 5: Listas aninhadas */
+
+.menu ul,
+.menu ol {
+    padding-left: 1.5rem;
+}
+
+.menu li {
+    margin-bottom: 0.5rem;
+}
+
+/* Registros de sala de aula */
+
+.registros {
+    list-style-type: circle;
+}
+
+/* Laboratórios */
+
+.laboratorios {
+    list-style-type: square;
+}
+
+/* Espaçamento dos títulos dos módulos */
+
+.menu ol h3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ETAPA 6: Conteúdo principal e cards */
+
+.card {
+    background-color: var(--cor-superficie);
+
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.conteudo h2 {
+    border-bottom: 1px solid var(--cor-borda);
+
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+
+/* ETAPA 7: Rodapé / Status do Projeto */
+
+.rodape {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+
+    text-align: center;
+
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+}
+
+.rodape h2 {
+    margin: 0 0 0.25rem 0;
+}
+
+.rodape p {
+    margin: 0;
+}
+
+
+/* ETAPA 8: Responsividade */
+
+@media (max-width: 768px) {
+
+    body {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "header"
+            "nav"
+            "main";
+    }
+
+    .cabecalho {
+        padding: 1rem 1.5rem;
+    }
+
+    .menu {
+        border-right: none;
+        border-bottom: 1px solid var(--cor-borda);
+    }
+
+}
